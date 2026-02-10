@@ -1,0 +1,84 @@
+import random as rd
+fb_sayac=0
+gs_sayac=0
+ber_sayac=0
+for i in range(4000):
+    r=rd.randint(1,6)
+    t=rd.randint(1,6)
+    if r%2==0 & t%2==0:
+       fb_sayac+=1
+
+    elif r%2==1 & t%2==1:
+       gs_sayac+=1
+    else:
+       ber_sayac+=1
+
+    all=fb_sayac+gs_sayac+ber_sayac
+    print('fb=',fb_sayac/all)
+    print('gs=',gs_sayac/all)
+    print('berabere',ber_sayac/all)
+
+
+Alperen Erol Yalçınkaya
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
