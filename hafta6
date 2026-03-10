@@ -1,0 +1,44 @@
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.milligazete.com.tr/arsiv'
+r = requests.get(url)
+soup = BeautifulSoup(r.content,'html.parser')
+list2 = soup.find_all("div" , {"class":"col-lg-6"})
+for i in list2:
+     for link in i.findAll('a'):
+         my_link = link.get('href') + "\n"
+         bas='https://www.milligazete.com.tr/arsiv'
+         yeni_link='{}{}'.format(bas,my_link)
+         print(yeni_link)
+         with open("seyran2.txt","a",encoding="utf-8")as file:
+             file.write(yeni_link.strip() + "\n")
+
+
+
+urr='https://www.milligazete.com.tr/iran-ordusu-israil-ve-abd-buyukelcilerini-sinir-disi-eden-arap-veya-avrupa-ulkeleri-hurmuz-bogazindan-gecebilir'
+def icerik_topla(urr,f,icerik):
+r=requests.get(urr)
+soup=BeautifulSoup(r.content,'html.parser')
+date=soup.find("time",{"class":"fw-bold"})
+title = soup.find("h1").getText()
+content=''
+icerik = (soup.find("div",{"class":
+            "article-text-container"}).find_all('p'))
+for i in icerik:
+    content += i.getText()
+son='{} ; {} ; {} ; {}'.format(urr,date,title,content)
+with open(f_icerik, "a",encoding="utf-8")as file:
+    file.write(son.strip() + "\n")
+output='melek.txt'
+icerik_topla(urr,f)
+
+
+
+
+
+
+
+
+
+
