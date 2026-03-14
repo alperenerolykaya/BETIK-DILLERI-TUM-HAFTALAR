@@ -1,0 +1,30 @@
+class hesap_makinesi:
+    def __init__(self,say1,say2):
+        self.say1=say1
+        self.say2=say2
+        self.memory=[]
+    def topla(self):
+        sonuc=self.say1+self.say2
+        self.memory.append(sonuc)
+        print(sonuc)
+    def carp(self):
+        sonuc=self.say1*self.say2
+        self.memory.append(sonuc)
+        print(sonuc)
+
+    def cikarma(self):
+        sonuc=self.say1-self.say2
+        self.memory.append(sonuc)
+        print(sonuc)
+
+    def yazdir(self, n):
+        a = self.say1
+        b = self.say2
+        for i in range( 1, n):
+            r=a*(b+i)
+            sonuc='{}x{}={}'.format(self.say1,self.say2)
+            print(sonuc,"\n")
+
+
+    ALPEREN EROL YALÇINKAYA B2380.010023
+
